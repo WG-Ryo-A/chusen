@@ -1,1 +1,993 @@
-index.html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サービス利用規約｜抽選.com</title>
+<meta name="description" content="抽選.com サービス利用規約。応募条件・抽選方法・景品・不正対策・個人情報の取扱い等を定めます。">
+<meta name="robots" content="index,follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Cinzel:wght@500;700;900&family=Bodoni+Moda:wght@700;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg-deep:#0a0806;
+  --bg-soft:#15110a;
+  --bg-card:#1a1611;
+  --gold-1:#f4d03f;
+  --gold-2:#d4af37;
+  --gold-3:#a07c2c;
+  --gold-deep:#5c4416;
+  --cream:#f5e6c8;
+  --cream-soft:#e8d5a8;
+  --red:#c1262c;
+  --text:#f5efe0;
+  --text-mute:#a89a7a;
+  --line:#2d2418;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  background:var(--bg-deep);
+  color:var(--text);
+  line-height:1.85;
+  font-weight:400;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(ellipse at 20% 10%,rgba(212,175,55,.06) 0%,transparent 50%),
+    radial-gradient(ellipse at 80% 80%,rgba(212,175,55,.04) 0%,transparent 50%);
+  pointer-events:none;
+  z-index:0;
+}
+
+main,header,footer{position:relative;z-index:2}
+
+/* ========== Mascot ========== */
+.mascot-circle{width:100%;height:100%}
+
+/* ========== Header ========== */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  padding:14px 0;
+  background:rgba(10,8,6,.92);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-mascot{width:38px;height:38px;flex-shrink:0}
+.brand-name{
+  font-family:'Shippori Mincho',serif;
+  font-weight:800;
+  font-size:1.25rem;
+  letter-spacing:.05em;
+  color:var(--text);
+}
+.brand-name .dot{color:var(--gold-1)}
+.brand-name .com{font-family:'Cinzel',serif;font-weight:700;font-size:.95rem;margin-left:2px}
+.back-link{
+  color:var(--text-mute);
+  text-decoration:none;
+  font-size:.85rem;
+  letter-spacing:.05em;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  transition:color .2s;
+}
+.back-link:hover{color:var(--gold-1)}
+.back-link::before{content:'←';font-size:1rem}
+
+/* ========== Hero ========== */
+.terms-hero{
+  padding:80px 0 48px;
+  text-align:center;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,var(--bg-soft) 0%,var(--bg-deep) 100%);
+}
+.hero-eyebrow{
+  font-family:'Cinzel',serif;
+  font-size:.75rem;
+  letter-spacing:.4em;
+  color:var(--gold-2);
+  margin-bottom:16px;
+}
+.hero-title{
+  font-family:'Shippori Mincho',serif;
+  font-weight:800;
+  font-size:clamp(2rem,5vw,3.2rem);
+  letter-spacing:.04em;
+  line-height:1.25;
+  margin-bottom:24px;
+}
+.hero-title .gold-text{
+  background:linear-gradient(135deg,#fff4c0 0%,#f4d03f 50%,#d4af37 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.hero-meta{
+  display:inline-flex;
+  flex-wrap:wrap;
+  gap:24px;
+  font-size:.78rem;
+  color:var(--text-mute);
+  letter-spacing:.1em;
+  border:1px solid var(--line);
+  padding:12px 24px;
+  background:rgba(255,255,255,.02);
+}
+.hero-meta strong{color:var(--cream);font-weight:500;margin-left:6px}
+@media(max-width:600px){.hero-meta{gap:12px;font-size:.72rem;padding:10px 16px}}
+
+/* ========== Container ========== */
+.container{
+  max-width:920px;
+  margin:0 auto;
+  padding:0 24px;
+}
+.terms-body{padding:64px 0 96px}
+@media(max-width:768px){
+  .terms-body{padding:48px 0 64px}
+  .container{padding:0 20px}
+}
+
+/* ========== Preamble ========== */
+.preamble{
+  background:linear-gradient(180deg,rgba(212,175,55,.06) 0%,rgba(212,175,55,.01) 100%);
+  border:1px solid var(--gold-deep);
+  border-left:3px solid var(--gold-1);
+  padding:28px 32px;
+  margin-bottom:48px;
+  font-size:.92rem;
+  line-height:1.9;
+  color:var(--cream-soft);
+}
+@media(max-width:600px){.preamble{padding:20px 20px}}
+
+/* ========== Table of contents ========== */
+.toc{
+  background:var(--bg-card);
+  border:1px solid var(--line);
+  padding:24px 28px;
+  margin-bottom:64px;
+}
+.toc-title{
+  font-family:'Shippori Mincho',serif;
+  font-weight:700;
+  font-size:1rem;
+  letter-spacing:.1em;
+  color:var(--gold-2);
+  margin-bottom:16px;
+  padding-bottom:12px;
+  border-bottom:1px solid var(--line);
+}
+.toc-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:6px 24px;
+}
+@media(max-width:600px){.toc-grid{grid-template-columns:1fr;gap:4px}}
+.toc-grid a{
+  color:var(--text-mute);
+  text-decoration:none;
+  font-size:.82rem;
+  padding:4px 0;
+  transition:color .2s;
+  display:flex;
+  gap:8px;
+}
+.toc-grid a:hover{color:var(--gold-1)}
+.toc-grid a .toc-num{
+  font-family:'Bodoni Moda',serif;
+  font-weight:700;
+  color:var(--gold-2);
+  min-width:36px;
+}
+
+/* ========== Articles ========== */
+.article{
+  margin-bottom:48px;
+  scroll-margin-top:90px;
+}
+.article-header{
+  margin-bottom:20px;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.article-num{
+  font-family:'Cinzel',serif;
+  font-size:.7rem;
+  letter-spacing:.3em;
+  color:var(--gold-2);
+  white-space:nowrap;
+}
+.article-title{
+  font-family:'Shippori Mincho',serif;
+  font-weight:700;
+  font-size:clamp(1.15rem,2.6vw,1.4rem);
+  letter-spacing:.04em;
+  color:var(--text);
+  line-height:1.4;
+}
+.article-body{
+  font-size:.92rem;
+  line-height:1.95;
+  color:var(--cream-soft);
+}
+.article-body p{margin-bottom:16px}
+.article-body p:last-child{margin-bottom:0}
+.article-body strong{color:var(--gold-1);font-weight:700}
+
+/* Numbered clauses (1., 2., 3.) */
+.clauses{
+  list-style:none;
+  counter-reset:clause;
+  padding:0;
+}
+.clauses>li{
+  counter-increment:clause;
+  padding-left:36px;
+  position:relative;
+  margin-bottom:14px;
+}
+.clauses>li::before{
+  content:counter(clause)".";
+  position:absolute;
+  left:0;
+  top:0;
+  font-family:'Bodoni Moda',serif;
+  font-weight:700;
+  color:var(--gold-2);
+  font-size:1rem;
+  width:28px;
+  text-align:right;
+}
+
+/* Sub-list (a, b, c) */
+.sub-clauses{
+  list-style:none;
+  counter-reset:sub-clause;
+  padding:0;
+  margin-top:10px;
+}
+.sub-clauses>li{
+  counter-increment:sub-clause;
+  padding-left:28px;
+  position:relative;
+  margin-bottom:6px;
+  font-size:.88rem;
+}
+.sub-clauses>li::before{
+  content:"("counter(sub-clause,lower-alpha)")";
+  position:absolute;
+  left:0;
+  top:0;
+  color:var(--gold-3);
+  font-weight:500;
+  font-style:italic;
+}
+
+/* Definition list (for 主催者情報 etc.) */
+.def-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:16px 0;
+  font-size:.9rem;
+  border:1px solid var(--line);
+}
+.def-table th,.def-table td{
+  padding:14px 18px;
+  text-align:left;
+  border-bottom:1px solid var(--line);
+  vertical-align:top;
+}
+.def-table tr:last-child th,.def-table tr:last-child td{border-bottom:none}
+.def-table th{
+  background:rgba(212,175,55,.05);
+  color:var(--gold-2);
+  font-family:'Shippori Mincho',serif;
+  font-weight:700;
+  width:180px;
+  letter-spacing:.05em;
+  white-space:nowrap;
+}
+.def-table td{color:var(--text)}
+@media(max-width:600px){
+  .def-table th,.def-table td{display:block;width:100%}
+  .def-table th{border-bottom:none;padding-bottom:4px}
+  .def-table td{padding-top:4px;padding-bottom:14px}
+}
+
+/* Highlight box (for SNS platform non-involvement etc.) */
+.callout{
+  background:rgba(193,38,44,.08);
+  border:1px solid rgba(193,38,44,.3);
+  border-left:3px solid var(--red);
+  padding:20px 24px;
+  margin:16px 0;
+  font-size:.9rem;
+  color:var(--cream-soft);
+  line-height:1.85;
+}
+.callout strong{color:#fff}
+
+.callout-gold{
+  background:rgba(212,175,55,.06);
+  border-color:var(--gold-deep);
+  border-left-color:var(--gold-1);
+}
+.callout-gold strong{color:var(--gold-1)}
+
+/* Effective date footer */
+.effective-date{
+  margin-top:80px;
+  padding-top:32px;
+  border-top:1px solid var(--line);
+  text-align:right;
+  font-size:.85rem;
+  color:var(--text-mute);
+  line-height:2;
+}
+.effective-date .date-row{display:block}
+.effective-date strong{color:var(--cream);font-family:'Shippori Mincho',serif;font-weight:700;margin-left:8px}
+
+/* ========== Footer ========== */
+footer{
+  background:#050402;
+  padding:48px 0 32px;
+  border-top:1px solid var(--line);
+  text-align:center;
+}
+.footer-brand-wrap{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+.footer-mascot{width:36px;height:36px}
+.footer-brand{
+  font-family:'Shippori Mincho',serif;
+  font-weight:800;
+  font-size:1.3rem;
+  letter-spacing:.05em;
+}
+.footer-brand .dot{color:var(--gold-1)}
+.footer-brand .com{
+  font-family:'Cinzel',serif;
+  background:linear-gradient(135deg,#fff4c0,#d4af37);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.footer-links{
+  display:flex;
+  gap:24px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin:32px 0;
+  padding:32px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.footer-links a{
+  color:var(--text-mute);
+  text-decoration:none;
+  font-size:.78rem;
+  letter-spacing:.1em;
+  transition:color .2s;
+}
+.footer-links a:hover{color:var(--gold-1)}
+.copyright{
+  font-family:'Cinzel',serif;
+  font-size:.7rem;
+  letter-spacing:.25em;
+  color:var(--text-mute);
+}
+
+/* Print styles */
+@media print{
+  body{background:#fff;color:#000}
+  body::before{display:none}
+  .site-header,footer{display:none}
+  .terms-hero{background:none;border-bottom:2px solid #000}
+  .toc,.preamble,.callout{border:1px solid #ccc;background:#fafafa;color:#000}
+  .article-title,.hero-title,.toc-title{color:#000}
+  .article-body,.preamble,.callout{color:#222}
+  .article-num{color:#666}
+  .def-table th{background:#f0f0f0;color:#000}
+}
+</style>
+</head>
+<body>
+
+<!-- Mascot SVG -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mascot" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="48" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+      <circle cx="50" cy="50" r="46" fill="#f5e6c8"/>
+      <ellipse cx="26" cy="36" rx="9" ry="14" fill="#c9a961" transform="rotate(-25 26 36)"/>
+      <ellipse cx="74" cy="36" rx="9" ry="14" fill="#c9a961" transform="rotate(25 74 36)"/>
+      <ellipse cx="27" cy="38" rx="5" ry="9" fill="#f5e6c8" transform="rotate(-25 27 38)"/>
+      <ellipse cx="73" cy="38" rx="5" ry="9" fill="#f5e6c8" transform="rotate(25 73 38)"/>
+      <circle cx="50" cy="54" r="26" fill="#ead7a8"/>
+      <ellipse cx="50" cy="44" rx="14" ry="6" fill="#f5e6c8" opacity=".6"/>
+      <ellipse cx="50" cy="66" rx="13" ry="9" fill="#f5e6c8"/>
+      <circle cx="41" cy="53" r="3" fill="#1a0e00"/>
+      <circle cx="59" cy="53" r="3" fill="#1a0e00"/>
+      <circle cx="42" cy="52" r="1" fill="#fff"/>
+      <circle cx="60" cy="52" r="1" fill="#fff"/>
+      <circle cx="33" cy="62" r="3" fill="#e8a87c" opacity=".4"/>
+      <circle cx="67" cy="62" r="3" fill="#e8a87c" opacity=".4"/>
+      <ellipse cx="50" cy="62" rx="2.5" ry="2" fill="#1a0e00"/>
+      <path d="M50 64 Q47 69 44 67" fill="none" stroke="#1a0e00" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M50 64 Q53 69 56 67" fill="none" stroke="#1a0e00" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M42 80 L50 75 L58 80 L58 84 L50 81 L42 84 Z" fill="#c1262c"/>
+      <circle cx="50" cy="79.5" r="1.5" fill="#fff4c0"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ========== Header ========== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mascot"><svg width="100%" height="100%"><use href="#mascot"/></svg></span>
+      <span class="brand-name">抽選<span class="dot">.</span><span class="com" style="background:linear-gradient(135deg,#fff4c0,#d4af37);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">com</span></span>
+    </a>
+    <a href="index.html" class="back-link">トップに戻る</a>
+  </div>
+</header>
+
+<!-- ========== Hero ========== -->
+<section class="terms-hero">
+  <div class="container">
+    <div class="hero-eyebrow">TERMS OF SERVICE</div>
+    <h1 class="hero-title">サービス<span class="gold-text">利用規約</span></h1>
+    <div class="hero-meta">
+      <span>制定日:<strong>2026年5月29日</strong></span>
+      <span>施行日:<strong>2026年6月14日</strong></span>
+      <span>最終改定:<strong>—</strong></span>
+    </div>
+  </div>
+</section>
+
+<main class="terms-body">
+<div class="container">
+
+<!-- ========== Preamble ========== -->
+<div class="preamble">
+本規約は、EXRISE PROJECT(以下「主催者」)が運営する「抽選.com」(以下「本サービス」)の利用条件を定めるものです。本サービスに応募する全ての方(以下「応募者」)は、本規約に同意した上で参加するものとし、応募の時点で本規約の全条項に同意したものとみなされます。
+</div>
+
+<!-- ========== Table of Contents ========== -->
+<nav class="toc">
+  <div class="toc-title">目次</div>
+  <div class="toc-grid">
+    <a href="#a1"><span class="toc-num">第1条</span>適用範囲</a>
+    <a href="#a2"><span class="toc-num">第2条</span>定義</a>
+    <a href="#a3"><span class="toc-num">第3条</span>主催者情報</a>
+    <a href="#a4"><span class="toc-num">第4条</span>本サービスの内容</a>
+    <a href="#a5"><span class="toc-num">第5条</span>実施期間</a>
+    <a href="#a6"><span class="toc-num">第6条</span>SNSプラットフォーム非関与</a>
+    <a href="#a7"><span class="toc-num">第7条</span>応募資格</a>
+    <a href="#a8"><span class="toc-num">第8条</span>応募条件・方法</a>
+    <a href="#a9"><span class="toc-num">第9条</span>景品の詳細</a>
+    <a href="#a10"><span class="toc-num">第10条</span>抽選方法・透明性</a>
+    <a href="#a11"><span class="toc-num">第11条</span>当選発表・通知方法</a>
+    <a href="#a12"><span class="toc-num">第12条</span>景品の発送・受取</a>
+    <a href="#a13"><span class="toc-num">第13条</span>禁止事項</a>
+    <a href="#a14"><span class="toc-num">第14条</span>当選無効条件</a>
+    <a href="#a15"><span class="toc-num">第15条</span>不正対策・調査権</a>
+    <a href="#a16"><span class="toc-num">第16条</span>個人情報の取扱い</a>
+    <a href="#a17"><span class="toc-num">第17条</span>免責事項</a>
+    <a href="#a18"><span class="toc-num">第18条</span>知的財産権</a>
+    <a href="#a19"><span class="toc-num">第19条</span>本サイトの利用</a>
+    <a href="#a20"><span class="toc-num">第20条</span>規約の変更</a>
+    <a href="#a21"><span class="toc-num">第21条</span>連絡・通知</a>
+    <a href="#a22"><span class="toc-num">第22条</span>準拠法・合意管轄</a>
+    <a href="#a23"><span class="toc-num">第23条</span>協議解決</a>
+  </div>
+</nav>
+
+<!-- ========== 第1条 適用 ========== -->
+<section class="article" id="a1">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 01</span>
+    <h2 class="article-title">第1条(適用範囲)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>本規約は、本サービスの提供条件および主催者と応募者との間の本サービスに関する一切の関係に適用されます。</li>
+      <li>主催者が本サイト上で個別に表示する「本日の抽選」情報、注意事項、ガイドライン等(以下「個別規定」)は、本規約の一部を構成するものとします。</li>
+      <li>本規約の規定と個別規定の規定とが異なる場合は、個別規定が優先して適用されるものとします。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第2条 定義 ========== -->
+<section class="article" id="a2">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 02</span>
+    <h2 class="article-title">第2条(定義)</h2>
+  </div>
+  <div class="article-body">
+    <p>本規約において使用する用語の定義は、次のとおりとします。</p>
+    <ol class="clauses">
+      <li>「本サービス」とは、主催者が運営する「抽選.com」の名称で提供される、毎日開催される公開型抽選キャンペーンをいいます。</li>
+      <li>「本サイト」とは、本サービスを提供するためのウェブサイト(抽選.com)をいいます。</li>
+      <li>「対象SNS」とは、主催者が本サービスの応募媒体として指定するSNSプラットフォーム(X、Instagram、TikTok、YouTube等)をいいます。</li>
+      <li>「対象アカウント」とは、主催者が本サービスの公式アカウントとして対象SNS上で運営するアカウントをいいます。</li>
+      <li>「応募者」とは、本規約に同意の上、本サービスに応募した者をいいます。</li>
+      <li>「当選者」とは、応募者のうち、第10条に定める抽選により当選した者をいいます。</li>
+      <li>「景品」とは、当選者に対して主催者が提供する物品、ギフト券その他の経済的利益をいいます。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第3条 主催者情報 ========== -->
+<section class="article" id="a3">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 03</span>
+    <h2 class="article-title">第3条(主催者情報)</h2>
+  </div>
+  <div class="article-body">
+    <p>本サービスの主催者は以下のとおりです。</p>
+    <table class="def-table">
+      <tr><th>名称</th><td>株式会社EXRISE PROJECT(エクスライズプロジェクト)</td></tr>
+      <tr><th>所在地</th><td>東京都新宿区新宿5丁目4-1 新宿Qフラットビル 408</td></tr>
+      <tr><th>連絡先電話番号</th><td>090-7408-0227</td></tr>
+      <tr><th>お問い合わせ</th><td>本サービス公式Xアカウント(<a href="https://x.com/EXRISEPROJECT" target="_blank" rel="noopener" style="color:var(--gold-1)">@EXRISEPROJECT</a>)のダイレクトメッセージ</td></tr>
+      <tr><th>運営責任者</th><td>株式会社EXRISE PROJECT(別途特定商取引法に基づく表記にて掲示)</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ========== 第4条 本サービスの内容 ========== -->
+<section class="article" id="a4">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 04</span>
+    <h2 class="article-title">第4条(本サービスの内容)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>本サービスは、対象SNS上で主催者の指定する条件を満たす応募者の中から、第10条に定める抽選方法により当選者を決定し、景品を提供する公開型抽選キャンペーンです。</li>
+      <li>本サービスへの応募は<strong>完全無料</strong>であり、主催者は応募者に対し金銭その他の対価の支払いを求めません。本サービスは「オープン懸賞」として実施されるものとします。</li>
+      <li>本サービスは、商品・サービスの購入や有償会員登録を応募の条件とせず、不当景品類及び不当表示防止法上の景品規制(取引付随性のある景品類提供)には該当しないものとして設計されています。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第5条 実施期間 ========== -->
+<section class="article" id="a5">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 05</span>
+    <h2 class="article-title">第5条(実施期間)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>本サービスの実施開始日は<strong>2026年6月14日(日)</strong>とし、終了日は別途定めるまで継続します。</li>
+      <li>主催者は、合理的な理由により本サービスを中止または終了することができます。この場合、終了予定日の<strong>1週間前まで</strong>に本サイト上でその旨を告知するものとします。</li>
+      <li>各日の応募受付時間および抽選実施時刻は、本サイト「本日の抽選」欄に表示するものとし、当該表示を正とします。</li>
+      <li>天災、システム障害、対象SNSの仕様変更その他やむを得ない事由により当日の抽選を実施できない場合、主催者は応募者への事前通知なく当該日の抽選を中止し、または翌日以降に振り替えることができます。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第6条 SNSプラットフォーム非関与 ========== -->
+<section class="article" id="a6">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 06</span>
+    <h2 class="article-title">第6条(SNSプラットフォーム非関与)</h2>
+  </div>
+  <div class="article-body">
+    <div class="callout">
+      <strong>重要</strong><br>
+      本キャンペーンは<strong>EXRISE PROJECT</strong>が主催し、対象SNSを運営する各社(X Corp.、Meta Platforms, Inc.、TikTok Ltd.、Google LLC を含むがこれらに限らない)は、本キャンペーンに一切関与しません。
+    </div>
+    <ol class="clauses">
+      <li>本キャンペーンは、各対象SNS運営会社により主催・支援・承認・保証されているものではありません。</li>
+      <li>応募者は、本キャンペーンに関する一切の問い合わせ、苦情、紛争を、対象SNS運営会社ではなく主催者に対してのみ行うものとします。</li>
+      <li>応募者は、応募にあたり対象SNSの利用規約および各種ガイドラインを遵守する責任を自ら負うものとします。</li>
+      <li>主催者は、対象SNSの仕様変更、サービス停止、アカウントの凍結・制限等により本サービスの提供に影響が生じた場合でも、応募者に対し一切の責任を負いません。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第7条 応募資格 ========== -->
+<section class="article" id="a7">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 07</span>
+    <h2 class="article-title">第7条(応募資格)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>本サービスに応募できるのは、以下の全ての条件を満たす個人とします。
+        <ol class="sub-clauses">
+          <li>日本国内に居住していること</li>
+          <li>本規約に同意していること</li>
+          <li>対象SNSの利用規約に違反していないこと</li>
+          <li>未成年者の場合、法定代理人の同意を得ていること</li>
+          <li>主催者の役員、従業員、業務委託先その他関係者でないこと</li>
+        </ol>
+      </li>
+      <li>法人、団体、その他個人以外の主体は、本サービスに応募することができません。</li>
+      <li>主催者は、応募資格の有無を確認するため、応募者に対し本人確認資料の提示を求めることができます。応募者が合理的な期間内にこれに応じない場合、主催者は当該応募を無効とすることができます。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第8条 応募条件・方法 ========== -->
+<section class="article" id="a8">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 08</span>
+    <h2 class="article-title">第8条(応募条件・方法)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>応募者は、以下の全てを満たすことにより、応募が完了したものとみなされます。
+        <ol class="sub-clauses">
+          <li>当該日の応募締切時刻までに主催者の対象アカウントをフォローすること</li>
+          <li>応募者のSNSアカウントが公開設定であり、主催者からのダイレクトメッセージが受信可能な設定となっていること</li>
+          <li>主催者からのダイレクトメッセージに<strong>48時間以内</strong>に返信すること</li>
+        </ol>
+      </li>
+      <li>応募の具体的方法は、各対象SNSの仕様および主催者の運用に従うものとし、本サイトの「応募方法」欄に表示する内容を正とします。</li>
+      <li>応募者は、応募完了時点における対象アカウントのフォロー状態を、抽選実施時点まで維持しなければなりません。</li>
+      <li>応募の取消は応募者から行うことができますが、抽選実施後の取消はできないものとします。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第9条 景品 ========== -->
+<section class="article" id="a9">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 09</span>
+    <h2 class="article-title">第9条(景品の詳細)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>景品の内容、数量(当選人数)、当選確率等は日ごとに異なり、各日の景品詳細は本サイト「本日の抽選」欄に表示するものとします。当該表示の内容を正とします。</li>
+      <li>景品の例:Amazonギフト券 1,000円分(毎日1名様)。ただしこれは例示であり、実際の景品は日々変動します。</li>
+      <li>景品は当選者本人に対してのみ提供され、第三者への譲渡、換金、現金との交換は一切できません。</li>
+      <li>景品の仕様、デザイン、提供方法等は予告なく変更される場合があります。</li>
+      <li>景品としてデジタルコード(Amazonギフト券等)を提供する場合、当該コードの内容、有効期限、使用条件等は当該コードの発行者の定めるところによります。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第10条 抽選方法・透明性 ========== -->
+<section class="article" id="a10">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 10</span>
+    <h2 class="article-title">第10条(抽選方法・透明性)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>主催者は、当該日の応募締切時刻時点で第8条の応募条件を満たしている全ての応募者を対象に抽選を実施します。</li>
+      <li>抽選は以下の手順で実施されるものとし、運営側が事後的に当選者を恣意的に選定することができない方式を採用します。
+        <ol class="sub-clauses">
+          <li>応募者のSNSアカウント識別子のリストを、応募締切時刻時点で確定する</li>
+          <li>当該リストに対し、SHA-256ハッシュ関数を適用しリストを固定する</li>
+          <li>主催者が事後操作不可能な公開シード値(例:抽選日前日の日経平均終値の数値等)を取得する</li>
+          <li>シード値を用いた決定的アルゴリズムによりリストを並び替え、上位N名(Nは当該日の当選人数)を当選者とする</li>
+        </ol>
+      </li>
+      <li>主催者は、各日の抽選後、応募者総数、抽選シード値、当選者のSNSアカウント(伏字または同意を得た上で表示)を本サイトの実績アーカイブに記録・公開します。これにより第三者による再現検証が可能なものとします。</li>
+      <li>主催者は、抽選プロセスの一部または全部を動画にて録画し、本サイトおよび対象SNSにて公開することがあります。</li>
+      <li>抽選の結果について、応募者からの異議申し立てには応じられないものとします。ただし、第3項の公開情報に基づく明白な計算誤りが立証された場合はこの限りではありません。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第11条 当選発表・通知方法 ========== -->
+<section class="article" id="a11">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 11</span>
+    <h2 class="article-title">第11条(当選発表・通知方法)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>当選発表は、当選者に対してのみ、応募SNSプラットフォーム上のダイレクトメッセージにて通知することにより行います。当選者以外への個別通知は行いません。</li>
+      <li>当選者は、当選通知DMの受領後<strong>48時間以内</strong>に、主催者の指定する方法で景品受取に必要な情報(氏名、配送先住所、メールアドレス等)を返信しなければなりません。</li>
+      <li>前項の期間内に当選者から必要事項の返信がない場合、当該当選は<strong>無効</strong>となり、当選者は景品を受け取る権利を失うものとします。この場合、主催者は当該景品を繰り越し、譲渡または提供しないことを選択できます。</li>
+      <li>主催者は、当選者のSNSアカウント(伏字あり)、当選日、景品内容等を本サイトの実績ページにて公開することがあります。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第12条 景品の発送・受取 ========== -->
+<section class="article" id="a12">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 12</span>
+    <h2 class="article-title">第12条(景品の発送・受取)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>景品の発送は、当選者から第11条第2項に基づく必要事項の返信を受領した日から<strong>原則として30日以内</strong>に行います。ただし、景品の在庫状況、配送業者の都合等により遅延する場合があります。</li>
+      <li>デジタルコード型の景品は、当選者のSNSダイレクトメッセージまたは登録メールアドレス宛に送付します。</li>
+      <li>当選者から提供された配送先情報の誤りにより景品が届かない場合、または当選者の不在その他の理由により景品の受取ができない場合、主催者は再送義務を負いません。</li>
+      <li>景品の受領後、当選者の責に帰すべき事由(紛失、毀損、有効期限切れ等)により景品を使用できなくなった場合、主催者は補償の義務を負いません。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第13条 禁止事項 ========== -->
+<section class="article" id="a13">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 13</span>
+    <h2 class="article-title">第13条(禁止事項)</h2>
+  </div>
+  <div class="article-body">
+    <p>応募者は、本サービスの利用にあたり、以下の行為を行ってはなりません。</p>
+    <ol class="clauses">
+      <li>同一人物による複数のSNSアカウントを用いた重複応募</li>
+      <li>Bot、スクリプト、自動化ツール等を用いた応募</li>
+      <li>他人になりすました応募、または虚偽の情報を用いた応募</li>
+      <li>応募締切後、抽選実施前にフォロー解除を行う行為</li>
+      <li>非公開アカウント設定での応募</li>
+      <li>主催者、他の応募者、対象SNS運営会社その他第三者の権利を侵害する行為</li>
+      <li>本サービスの運営を妨害する行為</li>
+      <li>本サービスを利用して営利活動、宣伝、勧誘等を行う行為</li>
+      <li>反社会的勢力に対する利益供与となる行為</li>
+      <li>法令、本規約、対象SNSの利用規約に違反する行為</li>
+      <li>その他、主催者が不適切と判断する行為</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第14条 当選無効条件 ========== -->
+<section class="article" id="a14">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 14</span>
+    <h2 class="article-title">第14条(当選無効条件)</h2>
+  </div>
+  <div class="article-body">
+    <p>以下のいずれかに該当する場合、応募および当選は<strong>無効</strong>となります。応募および当選が無効となった場合、応募者は景品を受け取る権利を失うものとし、主催者は既に発送した景品の返還を請求することができます。</p>
+    <ol class="clauses">
+      <li>第7条の応募資格を満たしていないことが判明した場合</li>
+      <li>第8条の応募条件を満たしていない、または応募完了後に応募条件を維持しなかった場合(応募締切後・抽選実施前のフォロー解除を含む)</li>
+      <li>第13条の禁止事項に違反した場合</li>
+      <li>第11条第2項の期限内に必要事項の返信がなかった場合</li>
+      <li>応募者の提供した情報に虚偽が含まれていた場合</li>
+      <li>当選者が反社会的勢力に該当することが判明した場合</li>
+      <li>その他、主催者が本サービスの公正性を害する行為と判断する行為があった場合</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第15条 不正対策 ========== -->
+<section class="article" id="a15">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 15</span>
+    <h2 class="article-title">第15条(不正対策・調査権)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>主催者は、本サービスの公正性を確保するため、以下の不正対策を実施します。
+        <ol class="sub-clauses">
+          <li>機械学習等の手法を用いた、Bot・自動化ツール・スパムアカウントの自動検出と除外</li>
+          <li>アカウント作成日時、フォロー履歴、投稿パターン等に基づく異常検知</li>
+          <li>同一IPアドレス、同一デバイス、同一連絡先からの重複応募の検出と除外</li>
+          <li>当選者に対する本人確認資料の提示要求</li>
+        </ol>
+      </li>
+      <li>主催者は、応募者の応募内容について、合理的に必要な範囲で調査を行うことができます。応募者は、当該調査に協力するものとします。</li>
+      <li>主催者は、不正の疑いがあると判断した応募者について、事前通知なく応募を無効とし、または当選を取り消すことができます。</li>
+      <li>不正行為が悪質と判断される場合、主催者は当該応募者を本サービスの今後の参加から永久に除外することができます。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第16条 個人情報の取扱い ========== -->
+<section class="article" id="a16">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 16</span>
+    <h2 class="article-title">第16条(個人情報の取扱い)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>主催者は、本サービスの提供にあたり、以下の個人情報を取得することがあります。
+        <ol class="sub-clauses">
+          <li>応募者のSNSアカウント識別子(ユーザー名、表示名等の公開情報)</li>
+          <li>当選者から提供される氏名、住所、電話番号、メールアドレス等の景品発送に必要な情報</li>
+          <li>応募・当選確認の過程でやり取りされるダイレクトメッセージの内容</li>
+        </ol>
+      </li>
+      <li>取得した個人情報の利用目的は以下のとおりです。
+        <ol class="sub-clauses">
+          <li>本サービスの応募受付、抽選、当選通知、景品発送</li>
+          <li>不正応募・不正受領の防止および調査</li>
+          <li>応募者からの問い合わせへの対応</li>
+          <li>本サービスの改善およびマーケティング分析(個人を特定しない統計情報への加工を含む)</li>
+          <li>法令、行政機関、司法機関の要請への対応</li>
+        </ol>
+      </li>
+      <li>主催者は、応募者の個人情報を、応募者の事前同意なく第三者に提供しません。ただし、以下の場合はこの限りではありません。
+        <ol class="sub-clauses">
+          <li>景品の発送のため、配送業者または景品提供業者に必要最小限の情報を提供する場合</li>
+          <li>法令に基づき開示が必要な場合</li>
+          <li>人の生命、身体または財産の保護のために必要な場合</li>
+          <li>業務委託先に対し、利用目的の達成に必要な範囲で個人情報を委託する場合(この場合、主催者は委託先を適切に監督します)</li>
+        </ol>
+      </li>
+      <li>個人情報の保有期間は、利用目的達成後または応募者からの削除請求の時点までとし、不要となった時点で適切な方法により破棄します。</li>
+      <li>応募者は、自己の個人情報について、開示、訂正、追加、削除、利用停止を主催者に対し請求することができます。請求は本サイト記載の連絡先まで行うものとし、主催者は本人確認の上、合理的な期間内に対応します。</li>
+      <li>主催者は、個人情報の漏洩、滅失、毀損の防止のため、合理的な安全管理措置を講じます。</li>
+      <li>個人情報の取扱いに関する詳細は、別途定める<a href="#" style="color:var(--gold-1)">プライバシーポリシー</a>に従うものとします。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第17条 免責 ========== -->
+<section class="article" id="a17">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 17</span>
+    <h2 class="article-title">第17条(免責事項)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>主催者は、以下の事由により応募者または第三者に生じた損害について、一切の責任を負いません。
+        <ol class="sub-clauses">
+          <li>対象SNSプラットフォームの仕様変更、サービス停止、障害、アカウント凍結等による応募の不達、当選通知DMの不達</li>
+          <li>通信回線、インターネット、コンピューターシステムの障害、メンテナンス</li>
+          <li>本サイトの一時的な停止、変更、終了</li>
+          <li>応募者のSNSアカウント設定の不備(非公開設定、DM受信拒否等)による当選通知の不達</li>
+          <li>応募者が提供した情報の誤り、虚偽による景品の不達</li>
+          <li>天災、戦争、テロ、感染症、政府機関の命令その他不可抗力</li>
+          <li>第三者(他の応募者、第三者サービス事業者等)の行為による損害</li>
+        </ol>
+      </li>
+      <li>主催者は、景品の品質、性能、有効性、適合性について、明示または黙示を問わず一切の保証を行いません。第三者発行のギフト券等については、当該発行者の責任となります。</li>
+      <li>主催者の故意または重大な過失による場合を除き、主催者の応募者に対する損害賠償責任は、当該応募者が当選した景品の価額を上限とします。</li>
+      <li>消費者契約法その他の強行法規により、前項の免責が認められない場合、当該強行法規の許容する最大限の範囲で本条が適用されるものとします。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第18条 知的財産権 ========== -->
+<section class="article" id="a18">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 18</span>
+    <h2 class="article-title">第18条(知的財産権)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>本サイトおよび本サービスに関する全ての知的財産権(著作権、商標権、意匠権、特許権、ノウハウ等を含む)は、主催者または正当な権利者に帰属します。</li>
+      <li>応募者は、主催者の事前の書面による同意なく、本サイトおよび本サービスに関するコンテンツを複製、転載、改変、配布、販売等してはなりません。</li>
+      <li>当選者は、主催者が当選者のSNSアカウント情報、当選コメント、当選報告投稿等を、本サービスの広報・運営目的で本サイトおよび主催者のSNS上に掲載することに同意するものとします。掲載に際しては、可能な範囲で伏字化等のプライバシー配慮を行います。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第19条 本サイトの利用 ========== -->
+<section class="article" id="a19">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 19</span>
+    <h2 class="article-title">第19条(本サイトの利用)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>応募者は、本サイトを善良な管理者の注意をもって利用するものとし、本サイトの正常な運営を妨げる一切の行為を行ってはなりません。</li>
+      <li>主催者は、本サイトの保守、システム障害対応、その他運営上必要と判断した場合、事前通知なく本サイトの全部または一部を停止することができます。</li>
+      <li>本サイトに広告枠が設置されている場合、当該広告の内容については広告主が責任を負うものとし、主催者は広告内容の正確性、適法性、有用性等を保証しません。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第20条 規約の変更 ========== -->
+<section class="article" id="a20">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 20</span>
+    <h2 class="article-title">第20条(規約の変更)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>主催者は、応募者の一般の利益に適合する場合、または本規約変更の必要性、変更後の内容の相当性その他変更に関する事情に照らして合理的な場合、民法第548条の4の規定に基づき、本規約を変更することができます。</li>
+      <li>本規約を変更する場合、主催者は変更後の規約の効力発生日を定め、効力発生日までに変更後の規約の内容および効力発生日を本サイト上で告知するものとします。</li>
+      <li>変更後の規約の効力発生日以後に応募者が本サービスを利用した場合、当該応募者は変更後の規約に同意したものとみなされます。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第21条 連絡・通知 ========== -->
+<section class="article" id="a21">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 21</span>
+    <h2 class="article-title">第21条(連絡・通知)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>主催者から応募者への連絡は、本サイト上での告知、対象SNSへの投稿、または当選者へのダイレクトメッセージにより行うものとします。</li>
+      <li>応募者から主催者への連絡は、本サービス公式Xアカウント(@EXRISEPROJECT)のダイレクトメッセージにて行うものとします。</li>
+      <li>主催者は、応募者からの連絡内容を、本サービスの運営上必要な範囲で記録・保管することがあります。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第22条 準拠法・合意管轄 ========== -->
+<section class="article" id="a22">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 22</span>
+    <h2 class="article-title">第22条(準拠法・合意管轄)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>本規約および本サービスに関する一切の事項は、<strong>日本法</strong>を準拠法とし、これに従って解釈されるものとします。</li>
+      <li>本規約および本サービスに関して主催者と応募者との間に紛争が生じた場合、<strong>東京地方裁判所または東京簡易裁判所</strong>を第一審の専属的合意管轄裁判所とします。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== 第23条 協議解決 ========== -->
+<section class="article" id="a23">
+  <div class="article-header">
+    <span class="article-num">ARTICLE 23</span>
+    <h2 class="article-title">第23条(協議解決)</h2>
+  </div>
+  <div class="article-body">
+    <ol class="clauses">
+      <li>本規約に定めのない事項または本規約の解釈に疑義が生じた事項については、主催者と応募者が信義誠実の原則に従い協議の上、解決するものとします。</li>
+      <li>本規約の一部の条項が法令により無効とされた場合でも、当該条項以外の本規約の効力には影響しないものとします。</li>
+    </ol>
+  </div>
+</section>
+
+<!-- Effective date -->
+<div class="effective-date">
+  <span class="date-row">制定:<strong>2026年5月29日</strong></span>
+  <span class="date-row">施行:<strong>2026年6月14日</strong></span>
+  <span class="date-row">主催者:<strong>EXRISE PROJECT</strong></span>
+</div>
+
+</div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-brand-wrap">
+      <span class="footer-mascot"><svg width="100%" height="100%"><use href="#mascot"/></svg></span>
+      <span class="footer-brand">抽選<span class="dot">.</span><span class="com">com</span></span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">トップ</a>
+      <a href="terms.html">利用規約</a>
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">特定商取引法表記</a>
+      <a href="#">お問い合わせ</a>
+    </div>
+    <div class="copyright">© 2026 EXRISE PROJECT · ALL RIGHTS RESERVED</div>
+  </div>
+</footer>
+
+</body>
+</html>
