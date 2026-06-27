@@ -50,29 +50,34 @@ body{
   position:relative;width:100%;aspect-ratio:16/9;
   border:5px solid var(--gold);border-radius:16px;overflow:hidden;
   box-shadow:0 0 0 3px var(--red-deep),0 10px 30px rgba(0,0,0,.5),inset 0 0 40px rgba(0,0,0,.25);
-  background:linear-gradient(180deg,#ffd9a0 0%,#ffcf8c 55%,#caa66a 55%,#9c7b44 100%);
+  background:linear-gradient(180deg,#ffd9a0 0%,#ffcf8c 60%,#caa66a 60%,#9c7b44 100%);
 }
 canvas{display:block;width:100%;height:100%;}
+
+/* スマホ縦持ち：ゲーム枠を縦に大きく取り、画面を広く使う */
+@media (max-aspect-ratio: 3/4){
+  .stage{ aspect-ratio:auto; height:62vh; }
+}
 
 /* オーバーレイ画面 */
 .screen{
   position:absolute;inset:0;display:flex;flex-direction:column;
   align-items:center;justify-content:center;text-align:center;
   background:rgba(50,8,10,.82);backdrop-filter:blur(2px);
-  padding:3% 5%;gap:2%;
+  padding:4% 5%;gap:2.5%;overflow-y:auto;
 }
 .screen.hidden{display:none;}
-.screen img{width:clamp(80px,20%,128px);image-rendering:pixelated;
-  filter:drop-shadow(0 6px 12px rgba(0,0,0,.5));margin:0;}
+.screen img{width:clamp(72px,18%,120px);image-rendering:pixelated;
+  filter:drop-shadow(0 6px 12px rgba(0,0,0,.5));margin:0;flex-shrink:0;}
 .screen h2{font-size:clamp(22px,6vw,38px);color:var(--gold-light);line-height:1.1;
   text-shadow:0 2px 0 var(--gold-deep),0 4px 8px rgba(0,0,0,.6);}
-.screen p{color:var(--cream);font-size:clamp(12px,2.6vw,15px);max-width:92%;line-height:1.55;}
+.screen p{color:var(--cream);font-size:clamp(12px,2.6vw,15px);max-width:92%;line-height:1.5;}
 .btn{
-  margin-top:1%;cursor:pointer;border:none;
+  margin-top:1%;cursor:pointer;border:none;flex-shrink:0;
   font-family:inherit;font-weight:900;font-size:clamp(16px,3.6vw,20px);letter-spacing:1px;
   color:var(--red-deep);
   background:linear-gradient(180deg,var(--gold-light),var(--gold));
-  padding:2.4% 8%;border-radius:40px;
+  padding:11px 32px;border-radius:40px;
   box-shadow:0 5px 0 var(--gold-deep),0 8px 18px rgba(0,0,0,.4);
   transition:transform .08s,box-shadow .08s;
 }
@@ -145,12 +150,29 @@ const DAILY_LIMIT = 3;
 const SPEED = 0.34;        // m per frame 相当の進行速度係数
 const GRAVITY = 0.9;
 const JUMP_V = 18.5;
-const GROUND_Y = 430;      // 地面のy(キャンバス座標)
+// GROUND_Yは画面高さから動的に決める（下記resizeCanvasで設定）
 // =======================================================
 
 const cv = document.getElementById('cv');
 const ctx = cv.getContext('2d');
-const W = cv.width, H = cv.height;
+let W = 960, H = 540;          // canvas内部解像度（リサイズで更新）
+let GROUND_Y = 430;            // 地面y（リサイズで更新）
+
+// canvasの内部解像度を実表示サイズに合わせ、歪みを防ぐ
+function resizeCanvas(){
+  const rect = cv.getBoundingClientRect();
+  const dpr = Math.min(window.devicePixelRatio||1, 2);
+  W = Math.max(320, Math.round(rect.width));
+  H = Math.max(240, Math.round(rect.height));
+  cv.width = Math.round(W*dpr);
+  cv.height = Math.round(H*dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);   // 以降は論理px(W,H)で描ける
+  // 地面は画面下から約110pxの位置（縦長でも横長でも自然な高さ）
+  GROUND_Y = Math.round(H - Math.min(H*0.28, 150));
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+window.addEventListener('orientationchange', ()=>setTimeout(resizeCanvas,200));
 
 // 画像読み込み
 const imgs = {};
@@ -365,11 +387,12 @@ function drawDog(){
 
 function drawProgress(){
   ctx.save();
-  const pad=24, barW=W-pad*2, barH=16, y=20;
+  const pad=Math.max(16, W*0.04), barW=W-pad*2, barH=14, y=Math.max(14,H*0.04);
   ctx.fillStyle='rgba(0,0,0,.35)'; ctx.fillRect(pad,y,barW,barH);
   ctx.fillStyle='#f4c430'; ctx.fillRect(pad,y, barW*Math.min(distM()/100,1), barH);
-  ctx.fillStyle='#fff6e0'; ctx.font='bold 22px sans-serif'; ctx.textAlign='left';
-  ctx.fillText(Math.floor(distM())+' m / 100 m', pad, y+40);
+  const fs=Math.max(15, Math.min(22, W*0.05));
+  ctx.fillStyle='#fff6e0'; ctx.font='bold '+fs+'px sans-serif'; ctx.textAlign='left';
+  ctx.fillText(Math.floor(distM())+' m / 100 m', pad, y+barH+fs+4);
   ctx.restore();
 }
 
