@@ -48,11 +48,17 @@ body{
 #atari{
   position:absolute;inset:8px;border-radius:12px;overflow:hidden;
   display:none;z-index:20;
-  background:#000;
+  background:
+    radial-gradient(circle at 50% 42%, #ffdf6b 0%, #ff9a1f 26%, #e63413 55%, #7c0f0a 100%);
   box-shadow:0 0 40px rgba(255,190,40,.85),0 0 90px rgba(255,90,40,.5);
   cursor:pointer;
 }
-#atari img{width:100%;height:100%;object-fit:cover;display:block}
+#atari img{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:100%;height:auto;max-height:100%;
+  object-fit:contain;display:block;
+}
 #atari.show{display:block;animation:slam .55s cubic-bezier(.2,1.6,.35,1)}
 #atari.show img{animation:atariGlow 1.2s ease-in-out infinite .6s}
 @keyframes slam{
